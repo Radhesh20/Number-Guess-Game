@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Number Guessing Game</h1>
+        
+        <!-- Range Settings Section -->
+        <div id="settings-section">
+            <p>Set your custom range:</p>
+            <div class="range-inputs">
+                <input type="number" id="min-range" class="input-field" value="1">
+                <input type="number" id="max-range" class="input-field" value="100">
+            </div>
+            <button id="start-game-btn" class="btn">Start Game</button>
+        </div>
+
+        <!-- Main Game Section -->
+        <div id="game-section">
+            <p id="instruction-text" class="game-info"></p>
+            <p id="guesses-left" class="game-info">Guesses Left: <span id="guesses-left-span">10</span></p>
+            
+            <div id="feedback" class="feedback-warn">Good Luck!</div>
+
+            <div class="guess-input-container">
+                <input type="number" id="guess-input" class="input-field" placeholder="GUESS">
+                <button id="guess-btn" class="btn">Guess</button>
+            </div>
+            
+            <div id="previous-guesses-container">
+                <h3>Previous Guesses:</h3>
+                <ul id="previous-guesses-list"></ul>
+            </div>
+            
+            <button id="play-again-btn" class="btn hidden">Play Again</button>
+        </div>
+    </div>
+</body>
+</html>

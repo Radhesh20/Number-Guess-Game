@@ -1,0 +1,201 @@
+        /* CSS for the game styling */
+        :root {
+            --bg-color: #121212;
+            --primary-color: #1e1e1e;
+            --secondary-color: #2a2a2a;
+            --font-color: #e0e0e0;
+            --accent-color: #00ff9d;
+            --error-color: #ff4141;
+            --warning-color: #ffb800;
+            --font-family: 'Press Start 2P', cursive;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--font-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .game-container {
+            background-color: var(--primary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.2), 0 0 5px rgba(255, 255, 255, 0.1) inset;
+            border: 2px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        /* Settings Section Styles */
+        #settings-section p {
+            margin-bottom: 1rem;
+        }
+
+        .range-inputs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-field {
+            font-family: var(--font-family);
+            background-color: var(--secondary-color);
+            color: var(--font-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+            width: 80px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+        
+        .input-field:focus {
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+
+        /* Hide number input arrows */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+
+
+        /* Game Section Styles */
+        #game-section {
+            display: none; /* Initially hidden */
+        }
+
+        #feedback {
+            font-size: 1.1rem;
+            min-height: 2rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feedback-correct { color: var(--accent-color); }
+        .feedback-error { color: var(--error-color); }
+        .feedback-warn { color: var(--warning-color); }
+
+        .guess-input-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .game-info {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        #guesses-left-span {
+            font-weight: bold;
+            color: var(--warning-color);
+        }
+        
+        /* Previous Guesses Display */
+        #previous-guesses-container {
+            margin-top: 1.5rem;
+        }
+
+        #previous-guesses-container h3 {
+            margin-bottom: 1rem;
+        }
+
+        #previous-guesses-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            min-height: 40px;
+        }
+
+        .guess-bubble {
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+            border: 1px solid var(--font-color);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Button Styles */
+        .btn {
+            font-family: var(--font-family);
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.2s ease-out;
+            box-shadow: 0 4px 0 #009a5e;
+        }
+
+        .btn:hover {
+            background-color: #5dffc3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #009a5e;
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #009a5e;
+        }
+        
+        .btn:disabled {
+            background-color: #555;
+            color: #888;
+            cursor: not-allowed;
+            box-shadow: 0 4px 0 #333;
+        }
+
+        #play-again-btn {
+            margin-top: 1.5rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+  
